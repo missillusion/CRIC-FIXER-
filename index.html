@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRIC FIXER™ | Official Telegram</title>
+
+<!-- Font Awesome -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<style>
+:root{
+  --cta-a: linear-gradient(90deg,#00ff88,#00cc6a);
+  --cta-b: linear-gradient(90deg,#ffd000,#ff8c00);
+  --primary: var(--cta-a);
+  --theme-text: "IPL & World Cup Live Analysis";
+}
+
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== BACKGROUND ===== */
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#fff;
+  min-height:100vh;
+}
+
+/* ===== LAYOUT ===== */
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+.box{
+  max-width:420px;
+  width:100%;
+  text-align:center;
+  animation:fade .8s ease;
+}
+
+/* ===== TEXT ===== */
+h1{
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.tag{
+  font-size:14px;
+  opacity:.85;
+  margin:6px 0 14px;
+}
+.tag::after{content:var(--theme-text)}
+
+.warn{
+  margin:14px 0;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#ff0000,#ff6a00);
+  font-weight:900;
+  animation:pulse 1s infinite;
+}
+#timer{font-size:22px}
+
+/* ===== GLASS CARDS ===== */
+.card{
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(8px);
+  border-radius:14px;
+  padding:18px;
+  margin-top:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.card h2{
+  font-size:20px;
+  margin-bottom:10px;
+}
+.card li{
+  list-style:none;
+  padding:6px 0;
+  font-size:15px;
+}
+
+/* ===== CTA ===== */
+.cta{
+  display:block;
+  margin-top:20px;
+  padding:16px;
+  font-size:20px;
+  font-weight:900;
+  color:#000;
+  border-radius:50px;
+  text-decoration:none;
+  background:var(--primary);
+  box-shadow:0 0 22px rgba(0,255,136,.7);
+  animation:shake 2.2s infinite;
+}
+.cta span{
+  display:block;
+  font-size:13px;
+  opacity:.8;
+}
+.cta:active{transform:scale(.97)}
+
+.trust{
+  margin-top:14px;
+  font-size:13px;
+  opacity:.9;
+  animation:glow 2s infinite alternate;
+}
+
+/* ===== FLOATING TELEGRAM ===== */
+.float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:#0088cc;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  animation:pulse 1.4s infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse{50%{transform:scale(1.08)}}
+@keyframes shake{92%{transform:translateX(-2px)}96%{transform:translateX(2px)}}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}}
+@keyframes glow{to{text-shadow:0 0 14px #00ff88}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="box">
+
+    <h1>CRIC FIXER™</h1>
+    <div class="tag"></div>
+
+    <div class="warn">
+      FREE TELEGRAM ACCESS ENDS IN <span id="timer">20</span> SECONDS
+    </div>
+
+    <div class="card">
+      <h2>🏏 What You Get</h2>
+      <li>✔ Toss & Match Winning Analysis</li>
+      <li>✔ IPL & World Cup Coverage</li>
+      <li>✔ Data-Driven Predictions</li>
+      <li>✔ Fast Telegram Alerts</li>
+    </div>
+
+    <div class="card">
+      <h2>🔥 Why CRIC FIXER?</h2>
+      <li>✔ Trusted by Indian Cricket Fans</li>
+      <li>✔ No Fake Screenshots</li>
+      <li>✔ 100% Free Channel</li>
+    </div>
+
+    <a id="joinBtn" class="cta" href="">
+      JOIN OFFICIAL TELEGRAM
+      <span>Limited Free Access</span>
+    </a>
+
+    <div class="trust">
+      Trusted by thousands of cricket lovers 🇮🇳1
+    </div>
+
+    <div style="margin-top:16px;font-size:12px;opacity:.6">
+      Managed by CRIC FIXER Team
+    </div>
+
+  </div>
+</div>
+
+<!-- Floating Button -->
+<a id="floatBtn" class="float" href="#" aria-label="Join Telegram">
+  <i class="fab fa-telegram"></i>
+</a>
+
+<script>
+/* ===== CONFIG ===== */
+const INVITE_CODE = "0GY9hZmcG6tiZjA1";
+const HTTPS_LINK = "https://t.me/+" + INVITE_CODE;
+const TG_DEEP = "tg://join?invite=" + INVITE_CODE;
+
+/* ===== RANDOM CTA COLOR ===== */
+document.documentElement.style.setProperty(
+  "--primary",
+  Math.random() < 0.5 ? "var(--cta-a)" : "var(--cta-b)"
+);
+
+/* ===== TELEGRAM OPEN ===== */
+function openTelegram(){
+  window.location.href = TG_DEEP;
+  setTimeout(()=>window.location.href = HTTPS_LINK,800);
+}
+joinBtn.onclick = floatBtn.onclick = openTelegram;
+
+/* ===== COUNTDOWN ===== */
+let t=20;
+const timer=setInterval(()=>{
+  const el=document.getElementById("timer");
+  if(--t>0) el.textContent=t;
+  else{clearInterval(timer);openTelegram();}
+},1000);
+
+/* ===== EXIT INTENT VIBRATION ===== */
+let exited=false;
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden && !exited && navigator.vibrate){
+    exited=true;
+    navigator.vibrate([200,100,200]);
+  }
+});
+</script>
+</body>
+</html>
